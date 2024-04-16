@@ -27,10 +27,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // 🪲 Bug: Asynchronous function ?
   document.getElementById("solveRoom3").addEventListener("click", () => {
-    fetch("directions.json")
+  await  fetch("directions.json")
       .then((response) => response.json())
       .then((directions) => {
-        await navigateLabyrinth(directions).then((message) => {
+         navigateLabyrinth(directions).then((message) => {
           // 🪲 Bug: Incorrect method
           document.getElementById("room3Result").innerHTML = message;
         });
